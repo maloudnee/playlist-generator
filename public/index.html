@@ -19,8 +19,16 @@
     </head>
     <body>
         <div class="container">
+            
             <div id="input-section">
-                <h1> Gemini Playlist Generator</h1>
+
+                <div class="title-container">
+                    <img src="images/white_sparkle.png" alt="sparkle" class="sparkle left">
+                    <h1> Gemini Playlist Generator</h1>
+                    <img src="images/white_sparkle.png" alt="sparkle" class="sparkle right">
+
+                </div>
+
                 <p> Describe the kind of playlist you want, and let Gemini handle the rest!</p>
 
                 <textarea id="userInput" placeholder="e.g. songs for when i've made it to the top..."></textarea>
@@ -28,20 +36,15 @@
                 <button id="generateBtn">Generate Playlist</button>
                 
                 <!-- Decorative music player -->
-                <div class="music-player-controls">
-                    <i class="fas fa-heart"></i>
-                    <i class="fas fa-backward-step"></i>
-                    <div class="play-pause-circle"><i class="fas fa-pause"></i></div>
-                    <i class="fass fa-forward-step"></i>
-                    <i class="fas fa-ban"></i>
-                </div>
-                <div class="progress-bar"></div>
+               <img src="images/music_bar.png" alt = "music player controls"
+               class="player-image">
+
             </div>
 
             <div id="loader" class="loader hidden"></div>
             <div id="playlistResult" class="hidden"></div>
 
         </div>
-        <script src="scipt.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>

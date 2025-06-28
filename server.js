@@ -48,13 +48,18 @@ app.post('/generate-playlist', async (req, res) => {
         }
         
         `;
-        
+
     try {
         const result = await model.generateContent(prompt);
         const respone = await result.response;
         const text = response.text();
 
-        res.json({ playlist: text });
+        // Clean response 
+        const cleanedText = text.replace(/```json/g, '').replace(/```/g, '').trim();
+
+        const playlistJson = JSON.parse(cleanedText);
+
+        res.json(playlistJson);
     } catch (error) {
         console.error('Error calling Gemini App:', error);
         res.status(500).json({ error: 'Failed to generate playlist. Please try again. '});

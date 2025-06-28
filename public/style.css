@@ -14,7 +14,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    font-family: 'Caveat', cursive; /* Default font for page */
+    font-family: 'Caveat'; /* Default font for page */
     color: white;       
 }
 
@@ -26,32 +26,33 @@ body {
 }
 
 /* Input Section Styling */
+
+#input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.sparkle {
+    width: 50px;
+    height: auto;
+}
+
 h1 {
     font-family: 'Fredoka One', cursive;
     font-size: 3rem;
     color: #2e72a2;
-    margin-bottom: 0;
-    position: relative;
-    display: inline-block;
+    margin: 0 15px;
 }
 
-/* Sparkle psuedo-elements */
-h1::before, h1::after {
-    content: 'image here';
-    font-size: 2.5rem;
-    position: absolute;
-    top:50%;
-    transform: translateY(-50%);
-    opacity: 0.9;
-}
-
-h1::before {
-    left: -60px;
-}
-
-h1::after {
-    right: -60px;
-}
 
 .subtitle {
     font-size: 1.5rem;
@@ -69,7 +70,7 @@ textarea {
     background-color: rgba(44, 62, 80, 0.5);
     color: white;
     font-size: 1.2rem;
-    font-family: 'Caveat', cursive;
+    font-family: 'Caveat';
     margin-bottom: 25px;
     box-sizing: border-box;
     resize: none;
@@ -95,6 +96,8 @@ button {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     letter-spacing: 1px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 button:hover {
@@ -103,46 +106,10 @@ button:hover {
 }
 
 /* Decorative Music Player */
-.music-player-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin-top: 40px;
-    color: #2c3e50;
-    font-size: 1.2rem;
-}
-
-.play-pause-circle {
-    background-color: #2c3e50;
-    color: white;
-    width: 40px; 
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-}
-
-.progress-bar {
-    width: 60%;
-    height: 4px;
-    background-color: rgba(44, 62, 80, 0.7);
-    margin: 10px auto 0;
-    border-radius: 2px;
-    position: relative;
-}
-
-.progress-bar::before {
-    content: '';
-    position: absolute; 
-    left: 0%;
-    right: 0%;
-    width: 30%;
-    height: 100%;
-    background-color: #2c3e50;
-    border-radius: 2px;
+.player-image {
+    max-width: 250px;
+    height: auto;
+    opacity: 0.8;
 }
 
 /* Loader and Results */
