@@ -1,0 +1,13 @@
+# Virtual environments
+venv/
+pycache/
+
+# Log file 
+*.log
+
+# OS
+.DS_Store
+
+# Environment variables
+.env
+
