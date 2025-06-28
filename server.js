@@ -33,21 +33,22 @@ app.post('/generate-playlist', async (req, res) => {
         Your task is to generate a playlist with a creative name that includes one or
     two relevant emojis, short description, and a list of 17 songs.
         
-        For each song, format the output like this:
-        
-        **Playlist Title With A Relevant Name:** (make this bold)
-        
-        Description: (short description describing the playlist)
-        
-        Then list the songs as numbered items, where each song title is **bolded**, and the 
-        artist name is **italicized** below the song title, like this 
-        
-        1. **Song Title**
-           *Artist Name*
-           
-        Make sure the playlist title and description come first, then the list.
+        Please provide the output ONLY in a valid JSON format, with no other text or 
+    explanation before or after the JSON block.
+
+        The JSON structure should be:
+        {
+            "playlistName": "Creative Playlist Name 🎨",
+            "description": "A short, engaging description of thet playlist's vibe.",
+            "songs": [
+                { "title": "Song Title 1", "artist": "Artist Name 1" },
+                { "title": "Song Title 2". "artist": "Artist Name 2" },
+                and so on
+            ]
+        }
         
         `;
+        
     try {
         const result = await model.generateContent(prompt);
         const respone = await result.response;
