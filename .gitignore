@@ -1,13 +1,5 @@
-# Virtual environments
-venv/
-pycache/
-
-# Log file 
-*.log
-
-# OS
-.DS_Store
+# Node modules
+node_modules/
 
 # Environment variables
 .env
-
