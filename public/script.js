@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const generateBtn = document.getElementById('generateBtn');
     const userInput = document.getElementById('userInput');
-    const inputSection = document.getElementById('inputSection');
+    const inputSection = document.getElementById('input-section');
     const resultDiv = document.getElementById('playlistResult');
     const loader = document.getElementById('loader');
 
     generateBtn.addEventListener('click', async () => {
-        const userPrompt = userInput.ariaValueMax;
+        const userPrompt = userInput.value.trim();
 
         if (!userPrompt) {
             alert('Please describe the playlist you want!');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!response.ok) {
                 const errorData = await response.json();
-                throw new Error(errorDate.error || 'Something went wrong on there server.');
+                throw new Error(errorData.error || 'Something went wrong on the server.');
             }
 
             const data = await response.json();
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayPlaylist(data) {
         let htmlContent = `
-            <h2 class="playlist=title">${data.playlistName}</h2>
+            <h2 class="playlist-title">${data.playlistName}</h2>
             <p class="playlist-description">${data.description}</p>
             <ul>
         `;
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         htmlContent += `</ul>`
 
         // Add button to generate a new playlist
-        htmlContent += `<button id="baclBtn">Generate Another Playlist! </button>`;
+        htmlContent += `<button id="backBtn">Generate Another Playlist! </button>`;
 
         resultDiv.innerHTML = htmlContent;
 

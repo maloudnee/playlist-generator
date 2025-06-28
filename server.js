@@ -15,7 +15,7 @@ app.use(express.static('public')); // Serve static files
 
 // Initialize Google Gemini
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
 
 // API Endpoint
 app.post('/generate-playlist', async (req, res) => {
@@ -43,7 +43,7 @@ app.post('/generate-playlist', async (req, res) => {
             "songs": [
                 { "title": "Song Title 1", "artist": "Artist Name 1" },
                 { "title": "Song Title 2". "artist": "Artist Name 2" },
-                and so on
+                ...and so on
             ]
         }
         
@@ -51,7 +51,7 @@ app.post('/generate-playlist', async (req, res) => {
 
     try {
         const result = await model.generateContent(prompt);
-        const respone = await result.response;
+        const response = await result.response;
         const text = response.text();
 
         // Clean response 

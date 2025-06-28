@@ -1,5 +1,5 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Patrick+Hand&display=swap');
 
 body {
     /* Background */
@@ -14,7 +14,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    font-family: 'Caveat'; /* Default font for page */
+    font-family: 'Patrick Hand'; /* Default font for page */
     color: white;       
 }
 
@@ -22,7 +22,7 @@ body {
     max-width: 600px;
     width: 90%;
     text-align: center;
-    padding: 20px;
+    padding-top: 50px;
 }
 
 /* Input Section Styling */
@@ -55,10 +55,11 @@ h1 {
 
 
 .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 10px;
     margin-bottom: 40px;
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Patrick Hand' 
 }
 
 textarea {
@@ -70,7 +71,7 @@ textarea {
     background-color: rgba(44, 62, 80, 0.5);
     color: white;
     font-size: 1.2rem;
-    font-family: 'Caveat';
+    font-family: 'Patrick Hand';
     margin-bottom: 25px;
     box-sizing: border-box;
     resize: none;
@@ -92,7 +93,7 @@ button {
     border: none;
     border-radius: 10px;
     font-size: 1.1rem; 
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Patrick Hand', cursive;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     letter-spacing: 1px;
@@ -146,7 +147,7 @@ rotate(360deg); } }
 }
 
 .playlist-description {
-    font-family: 'Caveat', cursive;
+    font-family: 'Patrick Hand';
     font-size: 1.3rem;
     color: #2c3e50;
     font-style: italic;
