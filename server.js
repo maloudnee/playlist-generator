@@ -30,8 +30,8 @@ app.post('/generate-playlist', async (req, res) => {
         You are an expert music curator. A user wants a playlist based on the following
      request: "${userInput}".
      
-        Your task is to generate a playlist with a relevant name, short description,
-    and a list of 17 songs.
+        Your task is to generate a playlist with a creative name that includes one or
+    two relevant emojis, short description, and a list of 17 songs.
         
         For each song, format the output like this:
         
