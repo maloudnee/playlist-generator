@@ -24,4 +24,4 @@ A web app that uses Google's Gemini AI to generate personilize music playlists b
 This project is licensed under the [MIT License](LICENSE)
 
 ## Credits
-Created by Maloudnee Marcier. Powered by Google's Gemini AI
+Created by Maloudnee Marcier. Powered by Google's Gemini AI.
