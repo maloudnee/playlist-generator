@@ -15,7 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Hide form, show loader
         inputSection.classList.add('hidden');
+
+        // loader
+        let index = 0;
+        const msg = "🎧 Crafting  your  playlist  . . .";
         loader.classList.remove('hidden');
+        loader.innerText="";
+
+        function typeLoaderText(text, el, speed = 25) {
+            if (index < text.length) {
+                el.innerText += text.charAt(index);
+                index++;
+                setTimeout(() => typeLoaderText(text, el, speed), speed);
+            }
+        }
+        typeLoaderText(msg, loader);
+
         resultDiv.classList.add('hidden');
 
         try {
@@ -35,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
             displayPlaylist(data);
+
         } catch (error) {
             alert(`Error: ${error.message}`);
             inputSection.classList.remove('hidden');
@@ -52,16 +68,27 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         data.songs.forEach(song => {
-            htmlContent += `<li>
-                <span><strong>${song.title}</strong></span>
-                <span>${song.artist}</span>
+            htmlContent += `<li class="song-item">
+                <img src="images/blue_vinyl.png" alt="Spinning vinyl" class="vinyl spinning-record">
+                <div class="song-details">
+                    <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(song.title + ' ' + song.artist)}" target="_blank">
+                        <strong>${song.title}</strong>
+                    </a><br>
+                    <em>${song.artist}</em>
+                </div>
             </li>`;
         });
 
         htmlContent += `</ul>`
 
         // Add button to generate a new playlist
-        htmlContent += `<button id="backBtn">Generate Another Playlist! </button>`;
+        htmlContent += `
+        <div id="buttonContainer">
+            <button id="backBtn">Generate Another Playlist </button>
+            <button id="retryBtn">Try Again With Same Prompt </button>
+        </div>
+        `;
+
 
         resultDiv.innerHTML = htmlContent;
 
@@ -73,6 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
             resultDiv.classList.add('hidden');
             inputSection.classList.add('hidden');
             userInput.value =' '; // Clear text area
+        });
+
+        // Add event list for retry button
+        document.getElementById('retryBtn').addEventListener('click', () => {
+            generateBtn.click();
         });
     }
 });
