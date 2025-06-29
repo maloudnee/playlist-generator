@@ -1,4 +1,4 @@
-GEMINI PLAYLIST GENERATOR
+## GEMINI PLAYLIST GENERATOR
 A web app that uses Google's Gemini AI to generate personilize music playlists based on user's text input
 
 ## Features
