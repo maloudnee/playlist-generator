@@ -25,3 +25,6 @@ This project is licensed under the [MIT License](LICENSE)
 
 ## Credits
 Created by Maloudnee Marcier. Powered by Google's Gemini AI.
+
+## Devpost
+https://devpost.com/software/gemini-playlist-generator
